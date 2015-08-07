@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui" />
+<meta content="yes" name="apple-mobile-web-app-capable" />
+<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+<meta content="telephone=no" name="format-detection" />
+
+<title>保罗理财</title>
+<link href="css/jquery.mobile-1.3.2.min.css" rel="stylesheet" type="text/css">
+<link href="css/h5.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<article data-role="page" id="page1">
+    <section class="firsh-no1bg">
+        <section class="firsh-no1Meg">
+            公元2106年，全球股市动荡人心惶惶 。预言之神章鱼帝不忍人间疾苦，降下两种神奇的章鱼币，赠予天赋异禀的你~！<br>
+            <p><span>点击继续</span> </p>
+        </section>
+        
+        <section class="firsh-no2btn">
+            <a href="#page3" data-transition="slideup" class="link1"><img src="images/h5/btn_zhang.png" /></a>
+            <a href="#page4" data-transition="slideup" class="link2"><img src="images/h5/btn_die.png" /></a>
+            <section class="btn-tips">预言大盘涨跌，选择章鱼币</section>
+        </section>
+        <a href="#" class="no1link">&nbsp;</a>
+    </section>
+</article>
+
+
+<article data-role="page" id="page3">
+     <section class="firsh-no3bg">
+       <section class="firsh-no3btn">
+           <a href="#" data-transition="slideup" class="no3-btn-zhang"><img src="images/h5/btn_pao.png" /></a>
+           <div class="btn-tips" style="color:#ea5514;">大盘涨多少点，抛售可赚同等数量现金！</div>
+       </section>
+       <img src="images/h5/qiandai.png" class="paowu" />
+    </section>
+</article> 
+
+
+<article data-role="page" id="page4">   	
+    <section class="firsh-no4bg">
+       <section class="firsh-no4btn">
+           <a href="#" data-transition="slideup" class="no4-btn-zhang"><img src="images/h5/btn_pao.png" /></a>
+           <div class="btn-tips" style="color:#37A58A;">大盘跌多少点，抛售可赚同等数量现金！</div>
+       </section>
+       <img src="images/h5/qiandai.png" class="paowu" />
+    </section>
+</article>
+
+<article data-role="page" id="page5">   	
+    <section class="firsh-no5bg">
+       <section class="firsh-no5Meg">
+          <img src="images/h5/dearm.png" class="gupiao" />
+          <img src="images/h5/qiandai.png" class="qiandai" />
+          <img src="images/h5/money.jpg" class="money" />
+          <img src="images/h5/money2.png" class="money2" />
+          <a href="#page6" data-transition="slideup" class="no5link"><img src="images/h5/zhong.png" class="zhong"></a>
+       </section>
+    </section>
+</article>
+
+<article data-role="page" id="page6">     
+    <section class="firsh-no6bg">
+       <a href="h5-2.html" target="_blank" class="no6btn"><img src="images/h5/nobtn.png"></a>
+    </section>
+
+</article>
+
+
+<script src="js/jquery-1.7.2.min.js"></script>
+<script src="js/jquery.mobile-1.3.2.min.js"></script>
+
+
+<script>
+	$(document).on("pageinit","#page1",function(){ // 当进入页面一时
+      	$(".firsh-no1Meg").addClass("firsh-no1anm");
+		//setTimeout('$(".firsh-no1anm").removeClass("firsh-no1anm").addClass("firsh-no1anm1")',3000);
+		setTimeout('$(".firsh-no1anm1").removeClass("firsh-no1anm1")',0);
+    });
+
+  $(document).on("pageshow","#page1",function(){ // 当进入页面一时
+      $(".no1link").click(function(){
+         $(this).css("display","none");
+         $(".firsh-no1anm").removeClass("firsh-no1anm").addClass("firsh-no1anm1");
+          setTimeout('$(".link1").css("display","inline-block").addClass("btn_zhang")',1500);
+          setTimeout('$(".link2").css("display","inline-block").addClass("btn_tie");',1500);
+          setTimeout('$(".link1").removeClass("btn_zhang").addClass("newflash1")',5800);
+          setTimeout('$(".link2").removeClass("btn_tie").addClass("newflash2")',6200);  
+          setTimeout('$(".btn-tips").addClass("btn-tips2")',2800);  
+      })
+     
+    });
+	
+	$(document).on("pagebeforehide","#page1",function(){ // 当离开页面一时
+      	$(".firsh-no1anm1").removeClass("firsh-no1anm1");
+    		$(".btn-tips2").removeClass("btn-tips2");
+    		$(".newflash2").removeClass("newflash2");
+    		$(".newflash1").removeClass("newflash1");
+		
+    });
+	
+	 $(document).on("pageinit","#page3",function(){ // 当进入页面三时
+      	setTimeout('$(".no3-btn-zhang").addClass("newflash2")',2500);
+        $(".firsh-no3btn a").click(function(){
+          $(".paowu").addClass("newpaowu");
+          setTimeout('location.href="#page5"',1300);
+        })
+    });
+	
+
+	$(document).on("pageinit","#page4",function(){ // 当进入页面四时
+      	setTimeout('$(".no4-btn-zhang").addClass("newflash2")',2500);
+    		$(".firsh-no4btn a").click(function(){
+          $(".paowu").addClass("newpaowu");
+          setTimeout('location.href="#page5"',1300);
+        })
+			
+    });
+
+  $(document).on("pageshow","#page5",function(){ // 当进入页面五时
+      setTimeout('$(".gupiao").addClass("newgupiao")',700);
+      setTimeout('$(".money").addClass("newmoney")',700);
+      setTimeout('$(".money2").addClass("newmoney2")',1200);
+      setTimeout('$(".no5link img").attr("src","images/h5/zhong2.png").addClass("newzhong2")',800);
+      
+
+      
+    });
+
+  $(document).on("pageshow","#page6",function(){ // 当进入页面六时
+      $(".no6btn").addClass("no6link");
+    });
+
+
+</script>
+</body>
+</html>
